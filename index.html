@@ -45,7 +45,7 @@
     <div>
       <div class="greeting">Hello, I'm 👋</div>
       <h1>Mohammad Salman Ahmed</h1>
-      <div class="hero-title">I build <span id="typewriter"></span><span class="cursor"></span></div>
+      <div class="hero-title"><span id="typewriter"></span><span class="cursor"></span></div>
       <div class="pill-row">
         <span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">REST APIs</span><span class="pill">Hibernate</span><span class="pill">MySQL</span>
       </div>
@@ -55,7 +55,7 @@
         <a class="btn btn-primary" href="assets/resume/Salman_Resume.pdf" download>Download Resume</a>
         <a class="btn btn-glass" href="assets/resume/Salman_Resume.pdf" target="_blank" rel="noopener">Preview Resume</a>
         <a class="btn btn-glass" href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-glass" href="#" id="linkedin-hero" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-glass" href="https://www.linkedin.com/in/mohammad-salman-ahmed/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-glass" href="#contact">Contact Me</a>
       </div>
       <div class="hero-stats reveal" id="heroStats">
@@ -255,13 +255,7 @@
           </ul>
           <div class="proj-link-row">
             <a class="proj-link" href="projects/eshop.html">📖 Case Study →</a>
-            <a class="proj-link" href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener">⭐ GitHub →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass proj-card reveal">
-        <div class="proj-shot">// bloodbank.png</div>
+            <a class="proj-link" href="https://github.com/Mohammad-Salman-Ahmed/E-SHOP-Management-System" target="_blank" rel="noopener">⭐ GitHub →</a>
         <div class="proj-body">
           <div class="proj-head">
             <h3>Blood Bank Management System</h3>
@@ -277,7 +271,7 @@
           </ul>
           <div class="proj-link-row">
             <a class="proj-link" href="projects/bloodbank.html">📖 Case Study →</a>
-            <a class="proj-link" href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener">⭐ GitHub →</a>
+            <a class="proj-link" href="https://github.com/Mohammad-Salman-Ahmed/blood-bank-management-system" target="_blank" rel="noopener">⭐ GitHub →</a>
           </div>
         </div>
       </div>
@@ -342,26 +336,26 @@
         <a class="contact-row" href="tel:+919741254297"><span class="ico">☎</span> +91 97412 54297</a>
         <div class="contact-row"><span class="ico">📍</span> Bengaluru, India</div>
         <a class="contact-row" href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener"><span class="ico">⭐</span> github.com/Mohammad-Salman-Ahmed</a>
-        <a class="contact-row" href="#" id="linkedin-contact" target="_blank" rel="noopener"><span class="ico">💼</span> linkedin.com/in/your-handle</a>
+        <a class="contact-row" href="https://www.linkedin.com/in/mohammad-salman-ahmed/" target="_blank" rel="noopener"><span class="ico">💼</span> linkedin.com/in/mohammad-salman-ahmed</a>
       </div>
     </div>
 
     <div class="reveal">
-      <form class="glass form-card tilt-card" id="contactForm">
+      <form class="glass form-card tilt-card" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="form-row">
           <label for="cf-name">Name</label>
-          <input type="text" id="cf-name" required placeholder="Your name">
+          <input type="text" id="cf-name" name="name" required placeholder="Your name">
         </div>
         <div class="form-row">
           <label for="cf-email">Email</label>
-          <input type="email" id="cf-email" required placeholder="you@example.com">
+          <input type="email" id="cf-email" name="email" required placeholder="you@example.com">
         </div>
         <div class="form-row">
           <label for="cf-message">Message</label>
-          <textarea id="cf-message" rows="4" required placeholder="What would you like to discuss?"></textarea>
+          <textarea id="cf-message" name="message" rows="4" required placeholder="What would you like to discuss?"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
-        <p class="form-note">Opens your email client with this message pre-filled — no backend required.</p>
+        <p class="form-note" id="formStatus"></p>
       </form>
     </div>
   </div>
@@ -374,7 +368,7 @@
     <div class="foot-role">Java Backend Developer</div>
     <div class="foot-social">
       <a href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-      <a href="#" id="linkedin-foot" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="https://www.linkedin.com/in/mohammad-salman-ahmed/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
       <a href="mailto:reachmdsalman@gmail.com" aria-label="Email">@</a>
     </div>
     <div class="foot-copy">© 2026 All rights reserved</div>

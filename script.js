@@ -148,16 +148,35 @@ initTilt('.exp-block');
 initTilt('.pas-card');
 initTilt('.fact-card');
 
-// ---- Contact form (mailto — no backend required) ----
+// ---- Contact form (submits to Formspree — real delivery, no page reload) ----
 const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
 if(contactForm){
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const name = document.getElementById('cf-name').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-    const message = document.getElementById('cf-message').value.trim();
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:reachmdsalman@gmail.com?subject=${subject}&body=${body}`;
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+    if(formStatus) formStatus.textContent = '';
+
+    try{
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if(response.ok){
+        contactForm.reset();
+        if(formStatus){ formStatus.textContent = 'Message sent — thanks for reaching out!'; formStatus.style.color = 'var(--success)'; }
+      } else {
+        if(formStatus){ formStatus.textContent = "Something went wrong — please email me directly instead."; formStatus.style.color = '#F87171'; }
+      }
+    } catch(err){
+      if(formStatus){ formStatus.textContent = "Couldn't send — please email me directly instead."; formStatus.style.color = '#F87171'; }
+    } finally {
+      submitBtn.textContent = originalLabel;
+      submitBtn.disabled = false;
+    }
   });
 }

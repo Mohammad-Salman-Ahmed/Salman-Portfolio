@@ -50,7 +50,20 @@ Just open `index.html` in a browser, or serve the folder with any static server
 
 ## Contact form
 
-The form on the Contact section opens the visitor's email client with a pre-filled message —
-no backend or third-party account required. If you'd rather receive submissions directly without
-opening a mail client, you can swap it for a service like **EmailJS** (free tier) using your own
-account keys.
+The form on the Contact section submits via **Formspree** (free tier, no server or API key
+management needed) so messages actually land in your inbox instead of just opening a mail client.
+
+**You must finish this one-time setup before it works:**
+1. Go to [formspree.io](https://formspree.io) and sign up free with `reachmdsalman@gmail.com`.
+2. Create a new form — Formspree gives you an endpoint like `https://formspree.io/f/abcd1234`.
+3. Open `index.html`, find this line:
+   ```html
+   <form class="glass form-card tilt-card" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+   ```
+   Replace `YOUR_FORM_ID` with the ID Formspree gave you.
+4. Formspree will send a confirmation email the first time someone submits the form — verify your
+   email address to activate delivery.
+5. Re-upload `index.html` to GitHub. Test it by sending yourself a message through the live form.
+
+Until step 3 is done, submissions will fail with a "Something went wrong" message — the form needs
+that real endpoint to have anywhere to send the message.
