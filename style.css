@@ -302,7 +302,7 @@ footer{ padding:56px 0 30px; border-top:1px solid var(--border); text-align:cent
 @keyframes staggerIn{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:translateY(0); } }
 
 @media (max-width:900px){
-  .hero-grid, .about-grid, .proj-grid, .edu-cert-grid, .contact-grid{ grid-template-columns:1fr; }
+  .hero-grid, .about-grid, .contact-grid{ grid-template-columns:1fr; }
   .hero-grid{ text-align:left; }
   .hero{ min-height:auto; padding:120px 0 60px; }
   .photo-frame{ order:-1; width:200px; height:200px; }
@@ -321,6 +321,7 @@ footer{ padding:56px 0 30px; border-top:1px solid var(--border); text-align:cent
   .nav-links a{ padding:12px 0; border-bottom:1px solid var(--border); opacity:1; }
   .nav-toggle{ display:block; }
   .nav-cta{ display:none; }
+  .proj-grid, .edu-cert-grid{ grid-template-columns:1fr; }
 }
 
 /* ===== CASE STUDY PAGES ===== */
