@@ -57,8 +57,11 @@
 
 <section>
   <div class="wrap">
-    <div class="glass" style="padding:60px 24px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted);">
-      [ Screenshot — add product catalog / checkout / admin dashboard views here ]
+    <div class="shot-gallery reveal">
+      <div class="glass shot-slot">[ Login / OTP screen ]</div>
+      <div class="glass shot-slot">[ Product catalog ]</div>
+      <div class="glass shot-slot">[ Razorpay checkout ]</div>
+      <div class="glass shot-slot">[ Admin dashboard ]</div>
     </div>
   </div>
 </section>
@@ -120,6 +123,24 @@
         <div class="arch-num">6</div>
         <div><h4>Containerize &amp; automate</h4><p>Dockerized the application and used Maven to automate the build.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">API Design</span>
+      <h2>Representative endpoints</h2>
+      <p class="section-sub">Illustrative of the REST design across the three roles — not a literal API reference.</p>
+    </div>
+    <div class="glass reveal mono" style="padding:26px 30px; font-size:13.5px; line-height:2.1;">
+      <div><span style="color:var(--accent2); font-weight:600;">POST</span> &nbsp;/api/auth/otp-login</div>
+      <div><span style="color:var(--accent2); font-weight:600;">GET</span> &nbsp;&nbsp;/api/products?sort=price&amp;category=...</div>
+      <div><span style="color:var(--accent2); font-weight:600;">POST</span> &nbsp;/api/cart/items</div>
+      <div><span style="color:var(--accent2); font-weight:600;">POST</span> &nbsp;/api/orders/checkout</div>
+      <div><span style="color:var(--accent2); font-weight:600;">POST</span> &nbsp;/api/payments/razorpay/verify</div>
+      <div><span style="color:var(--accent2); font-weight:600;">PUT</span> &nbsp;&nbsp;/api/admin/products/{id}/approve</div>
     </div>
   </div>
 </section>
