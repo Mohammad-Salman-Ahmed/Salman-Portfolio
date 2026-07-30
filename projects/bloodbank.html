@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Bank Management System — Case Study | Mohammad Salman Ahmed</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%238B5CF6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B1120'/%3E%3Ctext x='50' y='66' font-family='Arial' font-weight='700' font-size='46' fill='url(%23g)' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="bg-glow"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+<div class="scroll-progress"><div class="scroll-progress-bar" id="progressBar"></div></div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">Salman<span class="dot">.</span>dev</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#education">Education</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="../assets/resume/Salman_Resume.pdf" download>Resume ↓</a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="cs-back" href="../index.html#projects">← Back to projects</a>
+    <span class="eyebrow">Case Study · 02</span>
+    <h1>Blood Bank Management System</h1>
+    <p class="cs-summary">A donor-and-inventory web platform built to keep blood stock levels, donor history, and recipient requests consistent across 8+ blood groups.</p>
+
+    <div class="cs-meta-row">
+      <div class="cs-meta"><div class="label">Timeline</div><div class="value">2025</div></div>
+      <div class="cs-meta"><div class="label">Role</div><div class="value">Full Stack Developer (solo)</div></div>
+      <div class="cs-meta"><div class="label">Context</div><div class="value">Independent project</div></div>
+      <div class="cs-meta"><div class="label">Stack</div><div class="value">HTML5 · CSS3 · JavaScript · MySQL</div></div>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span><span class="pill">MySQL</span><span class="pill">Form Validation</span>
+    </div>
+
+    <div class="btn-row" style="margin-top:30px;">
+      <a class="btn btn-primary" href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener">View Code on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="glass" style="padding:60px 24px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted);">
+      [ Screenshot — add donor registration / inventory dashboard views here ]
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Problem → Approach → Result</span>
+      <h2>The brief</h2>
+    </div>
+    <div class="pas-grid">
+      <div class="glass pas-card reveal">
+        <span class="idx">Problem</span>
+        <h3>Stock and requests fall out of sync</h3>
+        <p>Blood inventory has to stay accurate in real time across multiple blood groups, while donor history and recipient requests both pull against — and update — the same stock numbers.</p>
+      </div>
+      <div class="glass pas-card reveal">
+        <span class="idx">Approach</span>
+        <h3>Push correctness into the schema</h3>
+        <p>The MySQL schema was normalized with integrity constraints across donors, stock levels, and transactions — so invalid states are rejected at the database, not just the UI.</p>
+      </div>
+      <div class="glass pas-card reveal">
+        <span class="idx">Result</span>
+        <h3>A consistent, validated workflow</h3>
+        <p>Donor registration, live inventory tracking across 8+ blood groups, and recipient request handling, with JavaScript form validation catching bad input before it reaches the database.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it was built</span>
+      <h2>Build sequence</h2>
+    </div>
+    <div class="glass arch-flow reveal" style="padding:8px 30px;">
+      <div class="arch-step">
+        <div class="arch-num">1</div>
+        <div><h4>Normalized schema design</h4><p>Modeled donors, blood group stock levels, and transaction records as separate, related tables with integrity constraints between them.</p></div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-num">2</div>
+        <div><h4>Donor registration flow</h4><p>Built the registration form and donor-history tracking, validated client-side before hitting the database layer.</p></div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-num">3</div>
+        <div><h4>Real-time inventory tracking</h4><p>Wired stock levels across 8+ blood groups so every donation or request updates the same source of truth.</p></div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-num">4</div>
+        <div><h4>Recipient request management</h4><p>Added recipient-side requests against live stock, with JavaScript validation guarding required fields and formats.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Outcome</span>
+      <h2>What shipped</h2>
+    </div>
+    <div class="result-grid reveal">
+      <div class="glass result-card"><div class="num" data-counter>8+</div><div class="label">Blood groups tracked in real time</div></div>
+      <div class="glass result-card"><div class="num" data-counter>3</div><div class="label">Related, constraint-enforced tables — donors, stock, transactions</div></div>
+      <div class="glass result-card"><div class="num" data-counter>2</div><div class="label">User flows — donor registration &amp; recipient requests</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Reflection</span>
+      <h2>What I'd do differently</h2>
+    </div>
+    <p class="reveal" style="color:var(--muted); font-size:15px; max-width:640px;">This project predates my Spring Boot work — rebuilding it on Spring Boot and JPA today would let the integrity constraints I hand-wrote in SQL be expressed and tested at the service layer too, closer to how the E-shop project is structured.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cs-footer-nav" style="border-top:1px solid var(--border);">
+    <a href="eshop.html">← Previous: E-shop Management System</a>
+    <a href="../index.html#projects">All projects →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-name">Mohammad Salman Ahmed</div>
+    <div class="foot-role">Java Backend Developer</div>
+    <div class="foot-social">
+      <a href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+      <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="mailto:reachmdsalman@gmail.com" aria-label="Email">@</a>
+    </div>
+    <div class="foot-copy">Case Study 02 of 02 · © 2026 Mohammad Salman Ahmed</div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

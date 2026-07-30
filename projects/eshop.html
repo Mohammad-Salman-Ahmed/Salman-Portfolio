@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-shop Management System — Case Study | Mohammad Salman Ahmed</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%238B5CF6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B1120'/%3E%3Ctext x='50' y='66' font-family='Arial' font-weight='700' font-size='46' fill='url(%23g)' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="bg-glow"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+<div class="scroll-progress"><div class="scroll-progress-bar" id="progressBar"></div></div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">Salman<span class="dot">.</span>dev</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#education">Education</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="../assets/resume/Salman_Resume.pdf" download>Resume ↓</a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="cs-back" href="../index.html#projects">← Back to projects</a>
+    <span class="eyebrow">Case Study · 01</span>
+    <h1>E-shop Management System</h1>
+    <p class="cs-summary">A 3-role ecommerce platform built from scratch during my internship at Jspider — covering schema design, layered MVC architecture, and live payment integration.</p>
+
+    <div class="cs-meta-row">
+      <div class="cs-meta"><div class="label">Timeline</div><div class="value">May 2026</div></div>
+      <div class="cs-meta"><div class="label">Role</div><div class="value">Full Stack Developer (solo)</div></div>
+      <div class="cs-meta"><div class="label">Context</div><div class="value">Internship deliverable, Jspider</div></div>
+      <div class="cs-meta"><div class="label">Stack</div><div class="value">Spring Boot 3 · Hibernate · MySQL</div></div>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill">Java 17</span><span class="pill">Spring Boot 3</span><span class="pill">Spring MVC</span><span class="pill">Thymeleaf</span><span class="pill">MySQL</span><span class="pill">Razorpay</span><span class="pill">Cloudinary</span><span class="pill">Docker</span><span class="pill">Maven</span>
+    </div>
+
+    <div class="btn-row" style="margin-top:30px;">
+      <a class="btn btn-primary" href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener">View Code on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="glass" style="padding:60px 24px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted);">
+      [ Screenshot — add product catalog / checkout / admin dashboard views here ]
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Problem → Approach → Result</span>
+      <h2>The brief</h2>
+    </div>
+    <div class="pas-grid">
+      <div class="glass pas-card reveal">
+        <span class="idx">Problem</span>
+        <h3>One platform, three very different users</h3>
+        <p>Customers needed to browse and check out securely. Merchants needed inventory and order tools. Admins needed oversight and approval control. Everything — schema, architecture, every integration — had to be designed from zero, working solo against a fixed deliverable timeline.</p>
+      </div>
+      <div class="glass pas-card reveal">
+        <span class="idx">Approach</span>
+        <h3>Layer it, then integrate</h3>
+        <p>Started from the data model outward: entities and relationships first, then repositories, then a service layer carrying the business rules, then REST-style controllers per role. Payments, auth, and file storage were added as integrations against that stable core.</p>
+      </div>
+      <div class="glass pas-card reveal">
+        <span class="idx">Result</span>
+        <h3>A working, role-aware checkout flow</h3>
+        <p>Three independent role workflows on one codebase, a Razorpay checkout that verifies payment server-side, OTP-gated login, and encrypted sensitive fields — packaged into a Docker image with a Maven build.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it was built</span>
+      <h2>Build sequence</h2>
+    </div>
+    <div class="glass arch-flow reveal" style="padding:8px 30px;">
+      <div class="arch-step">
+        <div class="arch-num">1</div>
+        <div><h4>Schema &amp; entity design</h4><p>Modeled products, orders, users, and roles in MySQL first, so every layer above it had a stable contract to build against.</p></div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-num">2</div>
+        <div><h4>Repository &amp; service layer</h4><p>Spring Data JPA repositories, with business logic kept in dedicated service classes, not in controllers.</p></div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-num">3</div>
+        <div><h4>Role-based controllers &amp; views</h4><p>Separate Spring MVC controllers and Thymeleaf templates for Customer, Merchant, and Admin, gated by role-based access control.</p></div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-num">4</div>
+        <div><h4>Razorpay checkout</h4><p>Order creation → payment capture → server-side signature verification, so payment status is never trusted from the client alone.</p></div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-num">5</div>
+        <div><h4>OTP auth &amp; AES encryption</h4><p>Email OTP login via Spring Mail, with AES encryption applied to sensitive stored fields.</p></div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-num">6</div>
+        <div><h4>Containerize &amp; automate</h4><p>Dockerized the application and used Maven to automate the build.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Outcome</span>
+      <h2>What shipped</h2>
+    </div>
+    <div class="result-grid reveal">
+      <div class="glass result-card"><div class="num" data-counter>3</div><div class="label">Independent role workflows — Customer, Merchant, Admin</div></div>
+      <div class="glass result-card"><div class="num" data-counter>3</div><div class="label">External integrations — Razorpay, Cloudinary, Spring Mail</div></div>
+      <div class="glass result-card"><div class="num" data-counter>1</div><div class="label">Containerized, Maven-automated build</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Reflection</span>
+      <h2>What I'd do differently</h2>
+    </div>
+    <p class="reveal" style="color:var(--muted); font-size:15px; max-width:640px;">Given more time, the next step would be splitting the sales dashboard queries into a read-optimized layer and adding integration tests around the Razorpay verification path — the part of the system where correctness matters most.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cs-footer-nav" style="border-top:1px solid var(--border);">
+    <a href="../index.html#projects">← All projects</a>
+    <a href="bloodbank.html">Next: Blood Bank Management System →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-name">Mohammad Salman Ahmed</div>
+    <div class="foot-role">Java Backend Developer</div>
+    <div class="foot-social">
+      <a href="https://github.com/Mohammad-Salman-Ahmed" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+      <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a href="mailto:reachmdsalman@gmail.com" aria-label="Email">@</a>
+    </div>
+    <div class="foot-copy">Case Study 01 of 02 · © 2026 Mohammad Salman Ahmed</div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
