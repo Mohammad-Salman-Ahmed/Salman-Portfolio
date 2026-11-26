@@ -163,50 +163,36 @@ section{ padding:110px 0; border-top:1px solid var(--border); position:relative;
 .scroll-cue .arrow{ display:block; margin:6px auto 0; width:14px; height:14px; border-right:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(45deg); animation:bob 1.6s ease-in-out infinite; }
 @keyframes bob{ 0%,100%{ transform:rotate(45deg) translate(0,0); } 50%{ transform:rotate(45deg) translate(4px,4px); } }
 
-/* photo frame */
-.photo-frame{
-  width:280px; height:280px; border-radius:50%; margin:0 auto; position:relative;
-  background:linear-gradient(135deg, var(--accent), var(--accent2)); padding:3px;
-  animation:float 5s ease-in-out infinite;
-}
-@keyframes float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-14px); } }
-.photo-frame::after{ content:""; position:absolute; inset:-14px; border-radius:50%; background:inherit; filter:blur(30px); opacity:.45; z-index:-1; }
 
-
+/* ===== PROFESSIONAL PROFILE PHOTO ===== */
 
 .photo-frame {
     width: 280px;
     height: 280px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    margin: 0 auto;
+    margin: 0 auto 65px;
+    padding: 4px;
     position: relative;
     background: linear-gradient(
         135deg,
         var(--accent),
         var(--accent2)
     );
-    padding: 3px;
-    animation: float 5s ease-in-out infinite;
+    animation: none;
     z-index: 2;
+    flex-shrink: 0;
 }
 
-
-.photo-frame {
-    width: 280px;
-    height: 280px;
-    aspect-ratio: 1 / 1;
+.photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: -14px;
     border-radius: 50%;
-    margin: 0 auto;
-    position: relative;
-    background: linear-gradient(
-        135deg,
-        var(--accent),
-        var(--accent2)
-    );
-    padding: 3px;
-    animation: float 5s ease-in-out infinite;
-    z-index: 2;
+    background: inherit;
+    filter: blur(30px);
+    opacity: 0.4;
+    z-index: -1;
 }
 
 .photo-inner {
@@ -216,25 +202,24 @@ section{ padding:110px 0; border-top:1px solid var(--border); position:relative;
     overflow: hidden;
     position: relative;
     background: var(--card);
-    clip-path: circle(50%);
 }
 
 .photo-inner img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     max-width: none;
     object-fit: cover;
     object-position: center 20%;
+    border-radius: 50%;
     display: block;
 }
 
-
-
-
-/* API call signature card */
+/* ===== API CARD SPACING ===== */
 
 .api-card {
-    margin-top: 42px;
+    margin-top: 0;
     padding: 16px 18px;
     position: relative;
     z-index: 1;
