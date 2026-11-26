@@ -183,6 +183,7 @@ section{ padding:110px 0; border-top:1px solid var(--border); position:relative;
     justify-content: center;
     overflow: hidden;
     position: relative;
+    clip-path: circle(50%);
 }
 
 .photo-inner img {
